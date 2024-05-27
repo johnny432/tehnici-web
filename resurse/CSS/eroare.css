@@ -1,0 +1,46 @@
+		#err-imag {
+			background-color: white;
+			background-size: 100%;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 100%;
+		}
+
+		#err-imag img {
+			background-size: cover;
+			height: 100vh;
+			width: 100%;
+		}
+
+		#err-coloane {
+			display: flex;
+			align-items: center;
+
+		}
+
+		#err-coloane h2 {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 25%;
+			left: 15%;
+			color: white;
+			font-size: 2em;
+
+		}
+
+		#err-coloane p {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 30%;
+			left: 15%;
+			color: white;
+			font-size: 1.5em;
+		}
