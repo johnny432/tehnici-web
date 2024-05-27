@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+    <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <title>Magazin de Jucarii - home</title>
+    <%- include("../fragmente/head") %>
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+
+        <main>
+            <label> Nume: <input type="text" id="inp-nume" , class="btn btn-primary bim btn-sm form-control  "> </label>
+            <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+            <div> Varsta:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                <p><label class="btn btn-outline-primary inp_radio col-md-4  ">Mica (varsta &le; 3)
+                        <input id="i_rad1" , name="gr_rad" value="0:3" type="radio" />
+                    </label></p>
+                <p><label class="btn btn-outline-primary inp_radio col-md-4">Mediu (3 &le; varsta &le; 7)
+                        <input id="i_rad2" , name="gr_rad" value="3:7" type="radio" />
+                    </label>
+                <p><label class="btn btn-outline-primary inp_radio col-md-4 ">Varsta mare ( 7 &le; varsta &le; 12)
+                        <input id="i_rad3" , name="gr_rad" value="7:12" type="radio" />
+                    </label>
+                <p><label class="btn btn-outline-primary inp_radio col-md-4">Mica (12 &le; 100)
+                        <input id="i_rad4" , name="gr_rad" value="12:100" type="radio" />
+                    </label></p>
+                <p>
+                    <label" class="btn btn-outline-primary inp_radio col-md-4">Toate
+                        <input id="i_rad5" , checked name="gr_rad" value="toate" type="radio" />
+                        </label>
+            </div>
+
+
+            <label for="Range" class="form-label"> Pret minim: <input type="range" id="inp-pret"
+                    class="form-range col-md-3" value="0" step="50">
+                <span id="infoRange">(0)</span></label>
+            <label>Select simplu:
+                <select id="inp-categorie" , class="btn btn-secondary dropdown-toggle btn-sm col-md-4">
+                    <option id="sel-toate" selected value="toate">toate </option>
+                    <% for (let opt of locals.optiuniCategorie) { %>
+                        <option value="<%= opt.categorie %>">
+                            <%= opt.categorie %>
+                        </option>
+                        <% } %>
+                </select>
+            </label>
+
+            <label>Select Produs:
+                <select id="inp-produs" , class="btn btn-secondary dropdown-toggle btn-sm col-md-4">
+                    <option id="sel-lego" selected value="toate">toate </option>
+                    <% for (let opt of locals.optiuniProdus) { %>
+                        <option value="<%= opt.tip_produs %>">
+                            <%= opt.tip_produs %>
+                        </option>
+                        <% } %>
+                </select>
+            </label>
+            <p>
+                <button id="filtrare" , class="btn btn-primary btn-rad bim btn-sm col-md-1 ">
+                    Filtreaza</button>
+
+                <button id="resetare" , class="btn btn-secondary btn-grs  btn-sm col-sm-1 ">Reseteaza</button><br />
+                <select id="sortCrescNume" class="btn btn-primary btn-grs btn-sm col-md-2">
+                    <option value="pret-nume" selected>Sorteaza crescator dupa pret si nume</option>
+                    <option value="varsta-preT">Sorteaza crescator dupa varsta si pret</option>
+                    <option value="varsta-numE">Sorteaza crescator dupa varsta si nume</option>
+                    <option value="nume-varsta">Sorteaza crescator dupa nume si varsta</option>
+                </select>
+
+                <select id="sortDescNume" class="btn btn-primary btn-grs btn-sm col-md-2">
+                    <option value="pret-nume" selected>Sorteaza descrescator dupa pret si nume</option>
+                    <option value="varsta-preT">Sorteaza descrescator dupa varsta si pret</option>
+                    <option value="varsta-numE">Sorteaza descrescator dupa varsta si nume</option>
+                    <option value="nume-varsta">Sorteaza descrescator dupa nume si varsta</option>
+                </select>
+
+            </p>
+
+            <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+            <section id="produse">
+                <div id="produs_titlu">
+                    <h2 class="val-nume">Produse</h2>
+                </div>
+
+                <div class="grid-produse">
+                    <% for( let prod of locals.produse) { %>
+
+                        <article id="produsuri" , class="produs">
+
+                            <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>"><span class="val-nume"><%-
+                                            prod.nume%></span></a></h3>
+                            <div class="info-prod">
+                                <p class="pret">Pret: <span class="val-pret"><%- prod.pret%> lei</span></p>
+                                <p class="varsta">Varsta: <span class="val-varsta"><%- prod.varsta%> ani +</span>
+                                </p>
+                            </div>
+                            <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span>
+                            </p>
+
+                            <p class="prod">Produs:<span class="val-produs"><%- prod.tip_produs%></span>
+                            </p>
+                            <figure>
+                                <a href="/produs/<%-prod.id %>"><img src="/resurse/imagini/produse/<%- prod.imagine %>"
+                                        style="width:160px;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+                            <label class="selecteaza-cos">
+                                Selectează:<br />
+                                <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                            </label>
+
+                        </article>
+
+
+                        <% }%>
+
+            </section>
+            <p>Sunt:
+            <div id="text1">0</div> produse
+            </p>
+            <p id="text"> Nu există produse conform filtrării curente</p>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
+</html>

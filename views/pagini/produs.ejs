@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+    <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+
+    <title>Magazin de jucării</title>
+    <%- include("../fragmente/head") %>
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+
+        <main>
+
+
+            <div class="container mt-5">
+                <h1>Carousel Produse</h1>
+                <div id="carouselProduse" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators" id="carousel-indicators"></ol>
+                    <div class="carousel-inner" id="carousel-inner"></div>
+                    <a class="carousel-control-prev" href="#carouselProduse" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselProduse" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <section>
+                    <h2>Pagină produs</h2>
+                    <article id="art-produs">
+                        <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                        <p>Pret: <span class="pret"><%- locals.prod.pret %> lei </span></p>
+                        <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                        <p>VARSTA: <span class="varsta"><%- locals.prod.varsta %> + ani </span></p>
+                        <p>TIP_PRODUS: <span class="tip_produs"><%- locals.prod.tip_produs %> </span></p>
+                        <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                        <p>PENTRU_EPILEPTICI: <span class="pt_diabetici"><%- locals.prod.pt_epileptici %> </span></p>
+                        <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                        <figure class="imag-produs">
+                            <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>" , width="230px"
+                                ,="[imagine <%- locals.prod.nume %>]" />
+                        </figure>
+                    </article>
+
+                </section>
+
+            </div>
+
+
+
+
+
+
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
+</html>

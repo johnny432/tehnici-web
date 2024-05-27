@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carusel Produse Aleatoare</title>
+    <style>
+        /* Stiluri pentru carusel */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            /* Limitează lățimea caruselului */
+            margin: auto;
+            /* Centrează caruselul */
+        }
+
+        .carousel-item {
+            flex: 1 0 20%;
+            /* 5 items in the carousel */
+            text-align: center;
+            padding: 10px;
+            /* Adaugă puțin spațiu în jurul fiecărui item */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+            /* Centrează imaginea în cadrul itemului */
+        }
+
+        .carousel-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            /* Mărimea fontului pentru numele produsului */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel" id="productCarousel">
+        <!-- Produsele vor fi încărcate aici din JavaScript -->
+    </div>
+</body>
+
+</html>
