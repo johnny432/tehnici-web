@@ -1,0 +1,44 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with ($primary: #ffd502,
+    $secondary: #E07846,
+    $border-radius: 10px,
+    $h1-font-size: 32px,
+    $h2-font-size: 24px,
+    $h3-font-size: 20px,
+    $h4-font-size: 18px,
+    $h5-font-size: 16px,
+    $h6-font-size: 14px,
+
+    $font-family-base: "Afacad");
+
+
+.btn-rad {
+    border-radius: 50%;
+
+
+}
+
+// @media screen and (max-width:700px) {
+//     // .btn {
+//     //     display: none;
+//     //     content: "\F18E";
+//     // }
+
+// }
+
+
+.taburi-iframe>a {
+    display: flexbox;
+    height: auto;
+    width: 45px;
+    height: 2em;
+    border-left: 1px solid var(--negru);
+    border-right: 1px solid var(--negru);
+    border-bottom: 1px solid var(--negru);
+    background-color: var(--galben-deschis);
+    padding: 0.4em;
+    text-decoration: none;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    font-size: 50%;
+    transition: all 600ms linear;
+}
